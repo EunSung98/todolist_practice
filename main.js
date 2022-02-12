@@ -17,4 +17,5 @@ addBtn.addEventListener("click", () => {
     night.appendChild(list);
   }
   inputBox.value = "";
+  inputBox.focus();
 });
