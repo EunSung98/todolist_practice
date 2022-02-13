@@ -13,6 +13,7 @@ function addList() {
   list.innerText = `${inputBox.value}`;
   if (time.value == "Morning") {
     if (morning.childElementCount === 0) {
+      listTime.classList.add("suvtitle");
       morning.appendChild(listTime);
     }
     morning.appendChild(list);

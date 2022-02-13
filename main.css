@@ -21,15 +21,13 @@ header .title {
   color: whitesmoke;
 }
 .container {
-  display: flex;
-  justify-items: center;
-  align-items: center;
+  margin: 0 auto;
   width: 80%;
   height: 1000px;
   background-color: whitesmoke;
 }
 .addList {
-  width: 80%;
+  width: 100%;
   height: 1000px;
   text-align: center;
 }
@@ -89,9 +87,19 @@ header .title {
   border: 2px rgb(59, 119, 99) solid;
 }
 .listTime {
-  float: left;
   color: white;
   background-color: rgb(59, 119, 99);
+}
+footer {
+  width: 100%;
+  height: 100px;
+  background-color: rgb(89, 97, 94);
+  color: whitesmoke;
+}
+footer div {
+  text-align: center;
+  font-size: 20px;
+  line-height: 100px;
 }
 @media screen {
 }
