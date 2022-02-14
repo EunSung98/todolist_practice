@@ -8,16 +8,20 @@ const miniList = document.querySelectorAll(".miniList");
 
 function addList() {
   const list = document.createElement("li");
-  const listTime = document.createElement("div");
+  const listTime = document.createElement("li");
+  listTime.classList.add("suvtitle");
+
   listTime.innerText = `${time.value}`;
   list.innerText = `${inputBox.value}`;
   if (time.value == "Morning") {
-    if (morning.childElementCount === 0) {
-      listTime.classList.add("suvtitle");
+    let morningChild = morning.childElementCount;
+    console.log(morningChild);
+    if (morningChild === 0) {
       morning.appendChild(listTime);
     }
     morning.appendChild(list);
   } else if (time.value == "Afternoon") {
+    console.log(afternoon.childElementCount);
     if (afternoon.childElementCount === 0) {
       afternoon.appendChild(listTime);
     }
