@@ -9,19 +9,18 @@ const miniList = document.querySelectorAll(".miniList");
 function addList() {
   const list = document.createElement("li");
   const listTime = document.createElement("li");
-  listTime.classList.add("suvtitle");
+  let timeValue = time.value;
+  let inputboxValue = inputBox.value;
 
-  listTime.innerText = `${time.value}`;
-  list.innerText = `${inputBox.value}`;
-  if (time.value == "Morning") {
-    let morningChild = morning.childElementCount;
-    console.log(morningChild);
-    if (morningChild === 0) {
+  listTime.innerText = `${timeValue}`;
+  list.innerText = `${inputboxValue}`;
+  // 왜,, html상에서는 Morning인데 console하면 morning으로 뜰까?
+  if (timeValue == "morning") {
+    if (morning.childElementCount === 0) {
       morning.appendChild(listTime);
     }
     morning.appendChild(list);
-  } else if (time.value == "Afternoon") {
-    console.log(afternoon.childElementCount);
+  } else if (timeValue == "afternoon") {
     if (afternoon.childElementCount === 0) {
       afternoon.appendChild(listTime);
     }
@@ -32,6 +31,7 @@ function addList() {
     }
     night.appendChild(list);
   }
+  listTime.classList.add("suvtitle");
   inputBox.value = "";
   inputBox.focus();
 }
