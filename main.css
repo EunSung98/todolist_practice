@@ -66,18 +66,7 @@ header .title {
   background-color: rgb(41, 82, 68);
   color: white;
 }
-.suvtitle {
-  margin: 0 auto;
-  padding-left: 10%;
-  width: 70%;
-  height: 36px;
-  background-color: rgb(59, 119, 99);
-  text-align: left;
-  color: whitesmoke;
-  font-size: 24px;
-  line-height: 36px;
-}
-.miniList li {
+.miniList .list {
   margin: 0 auto;
   margin-bottom: 10px;
   padding: 14px;
@@ -85,10 +74,22 @@ header .title {
   height: 30px;
   list-style: none;
   font-size: 26px;
-  list-style: 40px;
+  text-align: center;
   background-color: white;
   color: rgb(59, 119, 99);
   border-radius: 10px;
+}
+.miniList .suvtitle {
+  margin: 0 auto;
+  padding: 14px;
+  width: 80%;
+  height: 30px;
+  background-color: rgb(59, 119, 99);
+  text-align: left;
+  color: whitesmoke;
+  font-size: 26px;
+  line-height: 26px;
+  border-radius: 10px 10px 0 0;
 }
 footer {
   width: 100%;

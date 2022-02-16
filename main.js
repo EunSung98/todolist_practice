@@ -32,6 +32,7 @@ function addList() {
     night.appendChild(list);
   }
   listTime.classList.add("suvtitle");
+  list.classList.add("list");
   inputBox.value = "";
   inputBox.focus();
 }
