@@ -7,6 +7,10 @@ const night = document.querySelector("#night");
 const miniList = document.querySelectorAll(".miniList");
 
 function addList() {
+  if (inputBox.value.trim() == "") {
+    return;
+  }
+
   const list = document.createElement("li");
   const listTime = document.createElement("li");
   let timeValue = time.value;
@@ -36,10 +40,15 @@ function addList() {
   inputBox.value = "";
   inputBox.focus();
 }
+// object.onkeypress = function(){myScript};
+// object.addEventListener("keypress", myScript);
+inputBox.addEventListener("keypress", (e) => {
+  //keycode 가 아니라 keyCode
+  if (e.keyCode == 13) {
+    addList();
+  }
+});
 
 addBtn.addEventListener("click", () => {
-  if (inputBox.value.trim() == "") {
-    return;
-  }
   addList();
 });
