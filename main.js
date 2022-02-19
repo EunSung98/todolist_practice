@@ -17,7 +17,7 @@ function addList() {
   let inputboxValue = inputBox.value;
 
   listTime.innerText = `${timeValue}`;
-  list.innerText = `${inputboxValue}`;
+  list.innerHTML = `<input type="checkbox" class="listValue" id="${inputboxValue} click='checking()'">${inputboxValue}`;
   // 왜,, html상에서는 Morning인데 console하면 morning으로 뜰까?
   if (timeValue == "morning") {
     if (morning.childElementCount === 0) {
@@ -52,3 +52,10 @@ inputBox.addEventListener("keypress", (e) => {
 addBtn.addEventListener("click", () => {
   addList();
 });
+
+function checking() {
+  let listChecked = document.getElementById(`${inputBox}`).checked;
+  if (listChecked) {
+    list.style.textDecoration = "line-through";
+  }
+}

@@ -84,6 +84,9 @@ header .title {
   color: rgb(59, 119, 99);
   border-radius: 10px;
 }
+.list .listValue {
+  padding-right: 14px;
+}
 .miniList .suvtitle {
   margin: 0 auto;
   padding: 14px;
