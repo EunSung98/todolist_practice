@@ -5,6 +5,8 @@ const morning = document.querySelector("#morning");
 const afternoon = document.querySelector("#afternoon");
 const night = document.querySelector("#night");
 const miniList = document.querySelectorAll(".miniList");
+const clearDate = document.querySelector("#clearDate");
+const finishBtn = document.querySelector("#finishBtn");
 
 function addList() {
   if (inputBox.value.trim() == "") {
@@ -17,7 +19,7 @@ function addList() {
   let inputboxValue = inputBox.value;
 
   listTime.innerText = `${timeValue}`;
-  list.innerHTML = `<input type="checkbox" class="listValue" id="${inputboxValue} click='checking()'">${inputboxValue}`;
+  list.innerHTML = `<input type="checkbox" name="listValue" id="${inputboxValue} onclick(checking())">${inputboxValue}`;
   // 왜,, html상에서는 Morning인데 console하면 morning으로 뜰까?
   if (timeValue == "morning") {
     if (morning.childElementCount === 0) {
@@ -39,6 +41,14 @@ function addList() {
   list.classList.add("list");
   inputBox.value = "";
   inputBox.focus();
+
+  let listCount = document.querySelectorAll(".list").length;
+  if (listCount == 1) {
+    const finishBtn = document.createElement("button");
+    finishBtn.innerText = "Finish";
+    finishBtn.id = "finishBtn";
+    clearDate.appendChild(finishBtn);
+  }
 }
 // object.onkeypress = function(){myScript};
 // object.addEventListener("keypress", myScript);
@@ -55,7 +65,12 @@ addBtn.addEventListener("click", () => {
 
 function checking() {
   let listChecked = document.getElementById(`${inputBox}`).checked;
-  if (listChecked) {
+  if (listChecked == true) {
+    console.log(listChecked);
     list.style.textDecoration = "line-through";
   }
 }
+
+finishBtn.addEventListener("click", () => {
+  alert("Finish your list?");
+});
