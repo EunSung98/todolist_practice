@@ -19,24 +19,31 @@ function addList() {
   let inputboxValue = inputBox.value;
 
   listTime.innerText = `${timeValue}`;
-  list.innerHTML = `<input type="checkbox" name="listValue" id="${inputboxValue} onclick(checking())">${inputboxValue}`;
+  list.innerHTML = `<input type="checkbox">${inputboxValue} `;
+
   // 왜,, html상에서는 Morning인데 console하면 morning으로 뜰까?
-  if (timeValue == "morning") {
-    if (morning.childElementCount === 0) {
-      morning.appendChild(listTime);
-    }
-    morning.appendChild(list);
-  } else if (timeValue == "afternoon") {
-    if (afternoon.childElementCount === 0) {
-      afternoon.appendChild(listTime);
-    }
-    afternoon.appendChild(list);
-  } else {
-    if (night.childElementCount === 0) {
-      night.appendChild(listTime);
-    }
-    night.appendChild(list);
+  // if (timeValue == "morning") {
+  //   if (morning.childElementCount == 0) {
+  //     morning.appendChild(listTime);
+  //   }
+  //   morning.appendChild(list);
+  // } else if (timeValue == "afternoon") {
+  //   if (afternoon.childElementCount == 0) {
+  //     afternoon.appendChild(listTime);
+  //   }
+  //   afternoon.appendChild(list);
+  // } else {
+  //   if (night.childElementCount == 0) {
+  //     night.appendChild(listTime);
+  //   }
+  //   night.appendChild(list);
+  // }
+  let timeList = document.getElementById(`${timeValue}`);
+  if (timeList.childElementCount == 0) {
+    timeList.appendChild(listTime);
   }
+  timeList.appendChild(list);
+
   listTime.classList.add("suvtitle");
   list.classList.add("list");
   inputBox.value = "";
@@ -59,9 +66,7 @@ inputBox.addEventListener("keypress", (e) => {
   }
 });
 
-addBtn.addEventListener("click", () => {
-  addList();
-});
+addBtn.addEventListener("click", addList());
 
 function checking() {
   let listChecked = document.getElementById(`${inputBox}`).checked;
@@ -71,6 +76,4 @@ function checking() {
   }
 }
 
-finishBtn.addEventListener("click", () => {
-  alert("Finish your list?");
-});
+finishBtn.addEventListener("click", alert("Finish your list?"));
