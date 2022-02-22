@@ -6,7 +6,6 @@ const afternoon = document.querySelector("#afternoon");
 const night = document.querySelector("#night");
 const miniList = document.querySelectorAll(".miniList");
 const clearDate = document.querySelector("#clearDate");
-const finishBtn = document.querySelector("#finishBtn");
 
 function addList() {
   if (inputBox.value.trim() == "") {
@@ -19,7 +18,7 @@ function addList() {
   let inputboxValue = inputBox.value;
 
   listTime.innerText = `${timeValue}`;
-  list.innerHTML = `<input type="checkbox">${inputboxValue} `;
+  list.innerHTML = `<input type="checkbox" class="chkbox" id="${inputboxValue}">${inputboxValue} `;
 
   // 왜,, html상에서는 Morning인데 console하면 morning으로 뜰까?
   // if (timeValue == "morning") {
@@ -76,4 +75,5 @@ function checking() {
   }
 }
 
-finishBtn.addEventListener("click", alert("Finish your list?"));
+const finishBtn = document.querySelector("#finishBtn");
+finishBtn.addEventListener("click", () => alert("Finish your list?"));

@@ -99,20 +99,33 @@ header .title {
   line-height: 26px;
   border-radius: 10px 10px 0 0;
 }
+.chkbox {
+  width: 16px;
+  height: 16px;
+}
 .clearDate {
-  margin: 0 auto;
+  width: 100%;
+  height: 64px;
+  padding-bottom: 10px;
+  text-align: center;
 }
 #finishBtn {
+  border: 0;
+  outline: 0;
   margin: 0 auto;
   padding: 14px;
-  width: 80%;
-  height: 30px;
+  width: 20%;
   background-color: rgb(59, 119, 99);
-  text-align: left;
+  text-align: center;
   color: whitesmoke;
   font-size: 26px;
   line-height: 26px;
   border-radius: 10px;
+}
+#finishBtn:hover {
+  cursor: pointer;
+  background-color: rgb(41, 82, 68);
+  color: white;
 }
 footer {
   /* footer 고쳐야 함 */
