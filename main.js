@@ -65,13 +65,16 @@ inputBox.addEventListener("keypress", (e) => {
   }
 });
 
-addBtn.addEventListener("click", addList());
+addBtn.onclick = addList();
+
+document.getElementById(`${inputBox}`).addEventListener("click", checking());
 
 function checking() {
-  let listChecked = document.getElementById(`${inputBox}`).checked;
-  if (listChecked == true) {
+  if (document.getElementById(`${inputBox}`).checked == true) {
     console.log(listChecked);
     list.style.textDecoration = "line-through";
+  } else {
+    return;
   }
 }
 
