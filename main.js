@@ -6,6 +6,7 @@ const afternoon = document.querySelector("#afternoon");
 const night = document.querySelector("#night");
 const miniList = document.querySelectorAll(".miniList");
 const clearDate = document.querySelector("#clearDate");
+let finishBtn = document.getElementById("finishBtn");
 
 function addList() {
   if (inputBox.value.trim() == "") {
@@ -20,23 +21,6 @@ function addList() {
   listTime.innerText = `${timeValue}`;
   list.innerHTML = `<input type="checkbox" class="chkbox" id="${inputboxValue}">${inputboxValue} `;
 
-  // 왜,, html상에서는 Morning인데 console하면 morning으로 뜰까?
-  // if (timeValue == "morning") {
-  //   if (morning.childElementCount == 0) {
-  //     morning.appendChild(listTime);
-  //   }
-  //   morning.appendChild(list);
-  // } else if (timeValue == "afternoon") {
-  //   if (afternoon.childElementCount == 0) {
-  //     afternoon.appendChild(listTime);
-  //   }
-  //   afternoon.appendChild(list);
-  // } else {
-  //   if (night.childElementCount == 0) {
-  //     night.appendChild(listTime);
-  //   }
-  //   night.appendChild(list);
-  // }
   let timeList = document.getElementById(`${timeValue}`);
   if (timeList.childElementCount == 0) {
     timeList.appendChild(listTime);
@@ -50,10 +34,7 @@ function addList() {
 
   let listCount = document.querySelectorAll(".list").length;
   if (listCount == 1) {
-    const finishBtn = document.createElement("button");
-    finishBtn.innerText = "Finish";
-    finishBtn.id = "finishBtn";
-    clearDate.appendChild(finishBtn);
+    finishBtn.style.display = "block";
   }
 }
 // object.onkeypress = function(){myScript};
@@ -65,18 +46,25 @@ inputBox.addEventListener("keypress", (e) => {
   }
 });
 
-addBtn.onclick = addList();
+//왜 이건 안되지
+// addBtn.addEventListener("click",addList());
 
-document.getElementById(`${inputBox}`).addEventListener("click", checking());
+addBtn.addEventListener("click", () => {
+  addList();
+});
+
+document.getElementById(`${inputboxValue}`).addEventListener("click", () => {
+  checking();
+});
 
 function checking() {
-  if (document.getElementById(`${inputBox}`).checked == true) {
-    console.log(listChecked);
+  if (document.getElementById(`${inputboxValue}`).checked == true) {
     list.style.textDecoration = "line-through";
   } else {
     return;
   }
 }
 
-const finishBtn = document.querySelector("#finishBtn");
-finishBtn.addEventListener("click", () => alert("Finish your list?"));
+finishBtn.addEventListener("click", () => {
+  console.log("work");
+});
