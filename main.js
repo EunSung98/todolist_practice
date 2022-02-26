@@ -15,16 +15,22 @@ function addList() {
 
   const list = document.createElement("li");
   const listTime = document.createElement("li");
+
+  const chkbox = document.createElement("input");
+  chkbox.type = "checkbox";
+  chkbox.classList("chkbox");
+
   let timeValue = time.value;
   let inputboxValue = inputBox.value;
 
   listTime.innerText = `${timeValue}`;
-  list.innerHTML = `<input type="checkbox" class="chkbox" id="${inputboxValue}">${inputboxValue} `;
+  list.innerHTML = `${inputboxValue} `;
 
   let timeList = document.getElementById(`${timeValue}`);
   if (timeList.childElementCount == 0) {
     timeList.appendChild(listTime);
   }
+  timeList.appendChild(chkbox);
   timeList.appendChild(list);
 
   listTime.classList.add("suvtitle");
