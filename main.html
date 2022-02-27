@@ -11,35 +11,37 @@
 </head>
 
 <body>
-    <header>
-        <div class="title">To do list</h2>
-    </header>
-    <div class="container">
-        <div class="addList">
-            <!-- select 칸 -->
-            <select name="time" class="time" id="time">
-                <option value="morning">Morning</option>
-                <option value="afternoon">Afernoon</option>
-                <option value="night">Night</option>
-            </select>
-            <!-- The onkeypress event occurs when the user presses a key (on the keyboard). -->
-            <input type="text" class="inputBox" id="inputBox" placeholder="Add your list">
-            <button class="addBtn" id="addBtn">Add</button>
-        </div>
-        <div class="listBox" id="listBox">
-            <ul class="miniList" id="morning">
+    <div class="wrap">
+        <header>
+            <div class="title">To do list</h2>
+        </header>
+        <div class="container">
+            <div class="addList">
+                <!-- select 칸 -->
+                <select name="time" class="time" id="time">
+                    <option value="morning">Morning</option>
+                    <option value="afternoon">Afernoon</option>
+                    <option value="night">Night</option>
+                </select>
+                <!-- The onkeypress event occurs when the user presses a key (on the keyboard). -->
+                <input type="text" class="inputBox" id="inputBox" placeholder="Add your list">
+                <button class="addBtn" id="addBtn">Add</button>
+            </div>
+            <div class="listBox" id="listBox">
+                <ul class="miniList" id="morning">
 
 
-            </ul>
-            <ul class="miniList" id="afternoon">
+                </ul>
+                <ul class="miniList" id="afternoon">
 
-            </ul>
-            <ul class="miniList" id="night">
+                </ul>
+                <ul class="miniList" id="night">
 
-            </ul>
-        </div>
-        <div class="clearDate" id="clearDate">
-            <button class="finishBtn" id="finishBtn">Finish</button>
+                </ul>
+            </div>
+            <div class="clearDate" id="clearDate">
+                <button class="finishBtn" id="finishBtn">Finish</button>
+            </div>
         </div>
     </div>
     <footer>

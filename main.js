@@ -7,6 +7,7 @@ const night = document.querySelector("#night");
 const miniList = document.querySelectorAll(".miniList");
 const clearDate = document.querySelector("#clearDate");
 let finishBtn = document.getElementById("finishBtn");
+let inputboxValue = "";
 
 function addList() {
   if (inputBox.value.trim() == "") {
@@ -16,21 +17,20 @@ function addList() {
   const list = document.createElement("li");
   const listTime = document.createElement("li");
 
-  const chkbox = document.createElement("input");
-  chkbox.type = "checkbox";
-  chkbox.classList("chkbox");
+  // const chkbox = document.createElement("input");
+  // chkbox.type = "checkbox";
+  // chkbox.className = "chkbox";
 
   let timeValue = time.value;
-  let inputboxValue = inputBox.value;
+  inputboxValue = inputBox.value;
 
   listTime.innerText = `${timeValue}`;
-  list.innerHTML = `${inputboxValue} `;
+  list.innerHTML = `<span>${inputboxValue}</span> `;
 
   let timeList = document.getElementById(`${timeValue}`);
   if (timeList.childElementCount == 0) {
     timeList.appendChild(listTime);
   }
-  timeList.appendChild(chkbox);
   timeList.appendChild(list);
 
   listTime.classList.add("suvtitle");
